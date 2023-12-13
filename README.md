@@ -33,3 +33,5 @@ If you know better than me, please send me a message. This is my first time modd
   - This choice was made since Kart horns are always in Ogg Vorbis format. Adding other file formats is trivial. Contact me if you feel this is a good addition; I didn't personally see the need.
 - Horns are softly audible for a long distance.
   - Lethal Company has two sound effects for horns: regular and "distant". Instead of requiring the users of this mod to manually create distant versions of horns, I've just used the Unity to lower the volume and use this as the distant horn. It still works weirdly, if you prefer to only hear horns from close by, tell me. I'll add a config option for this.
+- Optimization is lacking by design.
+  - I did not care about optimization. Everything my mod does runs only once, on relatively rare items, and I haven't ran into any issues with 200+ (small) sound effects. If you experience issues, contact me.
