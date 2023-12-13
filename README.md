@@ -24,7 +24,7 @@ If you find any issues or incompatibilities, please send it to the me.
 
 # Design considerations
 
-If you know better than me, please send me a message. This is my first time modding a game. And although I have a theoretical computing science background, I quickly found out that game programming and modding is not at all comparable :').
+If you know better than me, please send me a message. This is my first time modding a game. And although I have a theoretical computing science background, I quickly found out that game programming and modding is not at all comparable to my theory :').
 
 - This mod uses scrap value as a base seed for horns.
   - This means no extra netcode is necessary, as the game already synchronizes scrap value. It also means horn sounds are consistent across sessions, since scrap values should be consistent.
