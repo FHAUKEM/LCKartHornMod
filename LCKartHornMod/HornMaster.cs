@@ -9,7 +9,6 @@ namespace LCKartHornMod;
 
 public class HornMaster
 {
-    private const float FarVolumeReductionFactor = 0.05f;
     public static List<AudioClip> Horns = [];
     public static List<AudioClip> HornsFar = [];
 
@@ -35,7 +34,7 @@ public class HornMaster
             if (clip != null)
             {
                 Horns.Add(clip);
-                HornsFar.Add(LowerVolumeByFactor(clip, FarVolumeReductionFactor));
+                HornsFar.Add(LowerVolumeByFactor(clip, Plugin.Instance.FarVolumeReductionFactor.Value));
             }
         }
 
@@ -66,7 +65,6 @@ public class HornMaster
 
     private static AudioClip LowerVolumeByFactor(AudioClip originalClip, float factor)
     {
-        // This should not decrease the original clip's volume
         AudioClip clip = AudioClip.Create(originalClip.name, originalClip.samples, originalClip.channels,
             originalClip.frequency, false);
         float[] samples = new float[originalClip.samples * originalClip.channels];

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace LCKartHornMod
     {
         public static Plugin Instance;
         public static ManualLogSource HornLog => Instance.Logger;
+        public ConfigEntry<float> FarVolumeReductionFactor;
 
         private void Awake()
         {
@@ -21,12 +23,15 @@ namespace LCKartHornMod
                 Instance = this;
             }
 
+            FarVolumeReductionFactor = Config.Bind("General", "FarVolumeReductionFactor", 0.05f,
+                "The factor by which the volume of the far audio is reduced. 0.05 means 5% of the original volume. Use 0 to disable far audio.");
+
             Instance.gameObject.hideFlags = HideFlags.HideAndDontSave;
             Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loading!");
 
             // Load audio files
             HornMaster.LoadHorns();
-            
+
             // Check if there were any horns loaded, otherwise disable the plugin
             if (HornMaster.Horns.Count > 0)
             {
@@ -52,7 +57,7 @@ namespace LCKartHornMod
                 // Clownhorn spawned. Start replacement process
                 HornLog.LogDebug("Clown horn spawned! Waiting for NetworkObject ID...");
                 Instance.StartCoroutine(Instance.WaitUntilNetworkObjectIDAvailable(__instance));
-                
+
                 // Debug log
                 HornLog.LogDebug("Coroutine started!");
             }
