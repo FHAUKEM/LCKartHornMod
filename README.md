@@ -18,6 +18,8 @@ ___
 1. Run the game once. This should create an empty `Horns` folder in `BepInEx/plugins`.
 1. Place all desired horn sound effects in `BepInEx/plugins/Horns`, as `.ogg` files.
 
+**No horns are included in this mod by default!**
+
 If you received a manual Horns folder for this mod, you can install that by placing it in `BepInEx/plugins` folder.
 Separate sound effects can be installed by placing them in `BepInEx/plugins/Horns`.
 
