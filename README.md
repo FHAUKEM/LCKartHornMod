@@ -1,15 +1,16 @@
 # LCKartHornMod
 
-This mod replaces all clown horn noises with pseudo-randomly selected sound effects. Horn sound effects are loaded
-automatically.
+This mod replaces all clown horn noises with pseudo-randomly selected sound effects. Sound effect files are loaded
+automatically, so this mod can also be used for custom sound effect packs.
 
-Inspired by the brainrot that is SRB2K's HornMod, I've tried to recreate this in Lethal Company.
+This mod was inspired by the brainrot that is SRB2K's HornMod, I've tried to bring this to Lethal Company.
 
-Only players that want this functionality, need to install this mod. All other players will hear the default clown horn
+Only players that want this functionality, need to install this mod. Players without the mod will hear the default clown
+horn
 sound effect. There is no requirement for the host to have this mod installed.
 ___
 
-## Installation
+## Manual installation
 
 1. Install BepInEx for Lethal Company. Create a `BepInEx/plugins` folder, or run the game once and it will create it
    automatically.
@@ -17,24 +18,49 @@ ___
 1. Run the game once. This should create an empty `Horns` folder in `BepInEx/plugins`.
 1. Place all desired horn sound effects in `BepInEx/plugins/Horns`, as `.ogg` files.
 
-If you received a Horns folder with this mod, you can install that by placing it in `BepInEx/plugins` folder.
+If you received a manual Horns folder for this mod, you can install that by placing it in `BepInEx/plugins` folder.
+Separate sound effects can be installed by placing them in `BepInEx/plugins/Horns`.
+
+Make sure to read the note about sound effect synchronization below.
 
 ### Sound effect synchronization
 
-If all connected players have the exact same files in the Horns folder, the sound effects that all players hear is the
+Only if all connected players have the exact same files in the Horns folder, will the sound effects that all players
+hear be the
 same.
-In the case that not all players hear the same sound effect from the horn, check this first:
+In the case that not all players hear the same sound effect from the horns, check this first:
 
 - `Horns` folder contains the exact same number of files.
 - All players have the same file names for the horns.
 
+If the problems persists, please create an issue on GitHub or post in the thread on the unofficial Lethal Company
+Modding discord.
+
+### Config file
+
+After launching the game with the mod installed, a config file will be created in `BepInEx/config`. This file currently
+contains only a single option: the `FarVolumeReductionFactor`. Currently, the SFXfar is just a lowered volume version of
+the original (no reverb or anything). This option allows you to set the volume of the far horns. The default value
+is `0.05`, which means the far horns are 5% as loud as the normal horns. Setting this to `0` will disable the far horns
+entirely.
 ___
 
-## Compatibility
+# Creating sound effect packs
 
-This mod should be compatible with all other mods, except those that change the clown horn sound effect.
+To create sound packs, all your mod needs is a `BepInEx/plugins/Horns` folder with `.ogg` files in it. The mod will
+automatically load all `.ogg` files in this folder. Only `.ogg` files are supported at the moment, since these are the
+file format used in the SRB2K HornMod.
 
-### Known issues and limitations
+Make sure to have this mod as a dependency.
+
+___
+
+# Compatibility
+
+This mod should be compatible with all other mods, except those that change the clown horn sound effect. There may also
+be issues with mods that change how sounds are played, but I have not tested this.
+
+## Known issues and limitations
 
 If you find any issue(s) not listed here, please contact me.
 
@@ -44,4 +70,5 @@ If you find any issue(s) not listed here, please contact me.
   sound effects installed.
 
 Also, this is my first mod, first time using C# and first time working with Unity. So, if you read this code and think "
-what the heck is this", feel free to contact me, make improvement PRs on the GitHub, etc.
+what the heck is this", "just do this you idiot", "please delete this from my life", or anything similar, feel free to
+post in the thread on the unofficial Lethal Company Modding discord, make PRs on the GitHub, etc.

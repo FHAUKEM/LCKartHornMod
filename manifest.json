@@ -1,0 +1,9 @@
+﻿{
+  "name": "LCKartHornMod",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/FHAUKEM/LCKartHornMod/",
+  "description": "Gives every clown horn a randomly chosen sound effect. Inspired by the brainrot that is SRB2K's hornmod.",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2100"
+  ]
+}

@@ -1,19 +1,7 @@
-﻿Describes future functionality and goals, sometimes for specific versions.
-
-## 1.0.0
-- [x] Add config file for volume of far horns, with option to disable.
-- [ ] Add config file explanation to README.
-- [ ] Create icon.
-- [ ] Create Manifest.json for Thunderstore.
-- [ ] Allow creation of sound effect packs using modding store (e.g. Thunderstore).
-- [ ] Finalise README, CHANGELOG and ROADMAP.
-- [ ] Prepare Git repository for public release.
-- [ ] Release on modding stores.
+﻿Describes planned functionality and goals, sometimes for specific versions.
 
 ## Future versions
-- [ ] Loading optimization.
-    - First, only gather SFX filenames and count.
-    - Fully load audio files only when selected instead of all of them.
+
 - [ ] Implement Hell horns system.
     - Current idea: a round has a small chance to be a hell round.
     - During a hell round, all players are assigned a horn they can play by pressing the horn button.
@@ -26,16 +14,37 @@
 - [ ] Add config file for Hell horns system.
 - [ ] Allow rebinding of Horn key in-game.
 
-## Very maybe future versions
-- [ ] Add custom networking to check for synchronization of horn sound effects.
+## Maybe future versions
+
+- [ ] Add custom networking to _check_ for synchronization of horn sound effects.
 - [ ] Add config file for custom networking.
+- [ ] Loading optimization.
+    - First, only gather SFX filenames and count.
+    - Fully load audio files only when selected instead of all of them.
+
+## Very maybe future versions
+
 - [ ] Expand custom networking to download missing horn sound effects on server join.
 - [ ] Add config file for downloading missing horn sound effects.
 - [ ] Add menu option to ask player if they want to download missing horn sound effects.
-- [ ] DSP convolution reverb to create "far horn" effects automagically
+- [ ] DSP convolution reverb to create proper "far horn" effects automagically
+
+## Completed versions
+
+### 1.0.0
+
+- [x] Add config file for volume of far horns, with option to disable.
+- [x] Add config file explanation to README.
+- [x] Create icon.
+- [x] Create Manifest.json for Thunderstore.
+- [x] Allow creation of sound effect packs using modding store (e.g. Thunderstore).
+- [x] Finalise README, CHANGELOG and ROADMAP.
+- [x] Prepare Git repository for public release.
 
 ## Scrapped plans
-- [ ] Add config file for horn volume.
+
+- [ ] Add config file for overall horn volume.
 
 # Have any suggestions?
+
 Drop them in this mod's thread in the Unofficial Lethal Company Modding Discord server.
