@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <Description>Horn mod for Lethal Company, based on SRB2K's horn mods.</Description>
-        <Version>0.6.1</Version>
+        <Version>1.0.0</Version>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>latest</LangVersion>
         <PackageId>LCKartHornMod</PackageId>

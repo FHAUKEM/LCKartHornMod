@@ -1,5 +1,4 @@
-﻿_Dates are in 'DD-MM-YYYY' format._
-
+_Dates are in 'DD-MM-YYYY' format._
 ___
 
 ## v1.0.0
