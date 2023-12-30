@@ -14,27 +14,31 @@ public class HornMaster
 
     public static void LoadHorns()
     {
-        string path = Path.Combine(Paths.BepInExRootPath, "plugins", "Horns");
-        if (!Directory.Exists(path))
+        // Load all horns from all Horns folders
+        // This includes BepInEx/plugins/LCKartHorns and BepInEx/plugins/**/LCKartHorns
+        string[] paths = Directory.GetDirectories(Paths.PluginPath, "LCKartHorns", SearchOption.AllDirectories);
+        
+        // Sort paths alphabetically to ensure consistent order
+        Array.Sort(paths, (a, b) => string.Compare(a, b, StringComparison.Ordinal));
+        
+        foreach (string path in paths)
         {
-            Directory.CreateDirectory(path);
-        }
-
-        string[] files = Directory.GetFiles(path, "*.ogg");
-        if (files.Length == 0)
-        {
-            Plugin.HornLog.LogInfo("No horns found!");
-            return;
-        }
-
-        Plugin.HornLog.LogInfo($"Attempting to load {files.Length} horns...");
-        foreach (string file in files)
-        {
-            AudioClip clip = LoadAudioFile(file);
-            if (clip != null)
+            string[] files = Directory.GetFiles(path, "*.ogg");
+            if (files.Length == 0)
             {
-                Horns.Add(clip);
-                HornsFar.Add(LowerVolumeByFactor(clip, Plugin.Instance.FarVolumeReductionFactor.Value));
+                Plugin.HornLog.LogInfo("No horns found!");
+                return;
+            }
+
+            Plugin.HornLog.LogInfo($"Attempting to load {files.Length} horns from {path}...");
+            foreach (string file in files)
+            {
+                AudioClip clip = LoadAudioFile(file);
+                if (clip != null)
+                {
+                    Horns.Add(clip);
+                    HornsFar.Add(LowerVolumeByFactor(clip, Plugin.Instance.FarVolumeReductionFactor.Value));
+                }
             }
         }
 
@@ -59,7 +63,8 @@ public class HornMaster
         }
 
         AudioClip clip = DownloadHandlerAudioClip.GetContent(loader);
-        clip.name = Path.GetFileNameWithoutExtension(path);
+        // Clip name is filename with concatenated a unique ID to prevent duplicate names
+        clip.name = Path.GetFileNameWithoutExtension(path) + Guid.NewGuid().ToString();
         return clip;
     }
 
