@@ -2,8 +2,8 @@ _Dates are in 'DD-MM-YYYY' format._
 ___
 
 ## v1.1.0
+Released: 30-12-2023
 
-Released: 22-12-2023
 ### Changes
 - Plugin doesn't create a `Horns` folder anymore.
 - Load all sound effects in all LCKartHorns folders under `BepInEx/plugins`, instead of  specifically`plugins/Horns`.

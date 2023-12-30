@@ -1,6 +1,6 @@
 ﻿Describes planned functionality and goals, sometimes for specific versions.
 
-## Future versions
+## Future ideas
 
 - [ ] Implement Hell horns system.
     - Current idea: a round has a small chance to be a hell round.
@@ -14,19 +14,17 @@
 - [ ] Add config file for Hell horns system.
 - [ ] Allow rebinding of Horn key in-game.
 
-## Maybe future versions
+## Maybe future ideas
 
 - [ ] Add custom networking to _check_ for synchronization of horn sound effects.
 - [ ] Add config file for custom networking.
-- [ ] Loading optimization.
-    - First, only gather SFX filenames and count.
-    - Fully load audio files only when selected instead of all of them.
+
 
 ## Very maybe future versions
 
 - [ ] Expand custom networking to download missing horn sound effects on server join.
-- [ ] Add config file for downloading missing horn sound effects.
-- [ ] Add menu option to ask player if they want to download missing horn sound effects.
+  - [ ] Add config file for downloading missing horn sound effects.
+  - [ ] Add menu option to ask player if they want to download missing horn sound effects.
 - [ ] DSP convolution reverb to create proper "far horn" effects automagically
 
 ## Completed versions
@@ -44,6 +42,9 @@
 ## Scrapped plans
 
 - [ ] Add config file for overall horn volume.
+- [ ] Loading optimization.
+  - First, only gather SFX filenames and count.
+  - Fully load audio files only when selected instead of all of them.
 
 # Have any suggestions?
 
